@@ -1,43 +1,46 @@
-//hap
-PImage CYW;
-PImage CYB;
-PImage CYG;
-PImage CBW;
-PImage CBB;
-PImage CBG;
-PImage CRW;
-PImage CRB;
-PImage CRG;
-PImage TRW;
-PImage TRB;
-PImage TRG;
-PImage TBW;
-PImage TBB;
-PImage TBG;
-PImage TYW;
-PImage TYB;
-PImage TYG;
+TileList allTiles;
+Tile[] chosenTiles = new Tile[9];
 
+Tile test;
+Tile test2;
 void setup() {
+  
   size(800, 800);
-  background (0);
-  drawGrid();
-  draw();
-}
+  allTiles = new TileList();
+  
+  for (int i = 0; i < 9; i++) 
+    chosenTiles[i] = allTiles.takeOne();
 
-void drawGrid() {
-  rect(50, 50, 200, 200);
-  rect(300, 50, 200, 200);
-  rect(550, 50, 200, 200);
-  rect(50, 300, 200, 200);
-  rect(300, 300, 200, 200);
-  rect(550, 300, 200, 200);
-  rect(50, 550, 200, 200);
-  rect(300, 550, 200, 200);
-  rect(550, 550, 200, 200);
+  chosenTiles[0].setXpos(50);
+  chosenTiles[0].setYpos(50);
+  
+  chosenTiles[1].setXpos(300);
+  chosenTiles[1].setYpos(50);
+  
+  chosenTiles[2].setXpos(550);
+  chosenTiles[2].setYpos(50);
+  
+  chosenTiles[3].setXpos(50);
+  chosenTiles[3].setYpos(390);
+  
+  chosenTiles[4].setXpos(300);
+  chosenTiles[4].setYpos(300);
+  
+  chosenTiles[5].setXpos(550);
+  chosenTiles[5].setYpos(300);
+  
+  chosenTiles[6].setXpos(50);
+  chosenTiles[6].setYpos(550);
+  
+  chosenTiles[7].setXpos(300);
+  chosenTiles[7].setYpos(550);
+  
+  chosenTiles[8].setXpos(550);
+  chosenTiles[8].setYpos(550);
 }
 
 void draw() {
-  CYW = loadImage("CYW.png");
-  image(CYW, 51, 51);
+  for(Tile t : chosenTiles) 
+    t.display();
+    
 }
