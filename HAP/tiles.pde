@@ -3,8 +3,3 @@ class Tile {
   float shape;
   float backdrop;
 }
-
-void draw() {
-  PImage photo;
-  photo = loadImage("TBB.png");
-}
