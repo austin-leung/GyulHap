@@ -30,6 +30,14 @@ public class Tile {
      
  }
   
+ 
+ void mouseNearby() {
   
-  
+   if (((mouseX - xpos) * (mouseX - xpos) + (mouseY - ypos) * (mouseY - ypos)) < 10000) {
+     print ("werk");
+     print(xpos + " " + ypos);
+     pattern = loadImage("TBB.png");
+   }
+ }
+ 
 }
