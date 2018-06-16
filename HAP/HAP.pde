@@ -20,7 +20,7 @@ PImage TYG;
 
 void setup() {
   size(800, 800);
-  background (0, 255, 0);
+  background (34,139,34);
   drawGrid();
   draw();
 }
@@ -60,5 +60,10 @@ void draw() {
   image(CYB, 300, 50);
   image(CYG, 550, 50);
   image(CBW, 50, 300);
+  image(CBW, 300, 300);
+  image(CBW, 550, 300);
+  image(CBW, 50, 550);
+  image(CBW, 300, 550);
+  image(CBW, 550, 550);
   
 }
