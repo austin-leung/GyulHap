@@ -4,12 +4,19 @@ ArrayList<Tile> selectedTiles;
 
 Tile test;
 Tile test2;
-void setup() { 
+PFont font;
+int interval = 20;
+int score;
+Timer timer;
+boolean onoff = false;
   
+void setup() { 
   size(800, 800);
   background(148,0,211);
+  font = createFont("Arial", 30);
   allTiles = new TileList();
-  
+  timer = new Timer(120000);
+  timer.start();
   for (int i = 0; i < 9; i++) 
     chosenTiles[i] = allTiles.takeOne();
     
@@ -44,12 +51,31 @@ void setup() {
 }
 
 void draw() {
-  
-    
- 
-  
  for(Tile t : chosenTiles) {
     t.display();    }
+{     
+  fill (100);
+  rect (745,5,40,30);
+  if (onoff){
+  fill(255);
+     textFont(font);
+  text((timer.totalTime - timer.passedTime)/1000,750,30);
+  onoff=false;
+} else {
+  fill (100);
+  rect (745,5,40,30);
+  onoff=true;
+}
+
+
+}
+ if(timer.isFinished()) {
+   stop();
+   background(0);
+   text("GAME OVER", 350, 400);
+   text("score " + score, 350, 450);
+ }
+ text(score, 15, 30);
 }
       
 void mouseClicked() {
@@ -63,13 +89,34 @@ void mouseClicked() {
   }
   println("remaining clicks" + (3 - selectedTiles.size()));
   
-  for(Tile t : selectedTiles) {
-    println (t.xpos + " " + t.ypos + " " + t.shape + " " + t.shapeColor + " " + t.backgroundColor);
-  }
+  //for(Tile t : selectedTiles) {
+  //  println (t.xpos + " " + t.ypos + " " + t.shape + " " + t.shapeColor + " " + t.backgroundColor);
+  //}
   
-   if (selectedTiles.size() == 3) {
+      
+   if (selectedTiles.size() >= 3) {
     if (trioIsValid(selectedTiles)) {
+      score += 1;
+      fill(255);
       println("yay");
+      
+      
+     
+      for(Tile t : selectedTiles) {
+        allTiles.add(t);
+        for(int i = 0; i < 9; i++) {
+         if ( chosenTiles[i].equals(t)) {
+           chosenTiles[i] = allTiles.takeOne(); 
+           chosenTiles[i].xpos = t.xpos;
+           chosenTiles[i].ypos = t.ypos;
+           println(chosenTiles[i].pattern + " " + i);
+         }
+         
+        }
+        
+      }
+      
+      
     }
     else {
       println("boo");
@@ -81,6 +128,7 @@ void mouseClicked() {
     selectedTiles.clear();
     background(148,0,211);
   }
+  
   
   
   

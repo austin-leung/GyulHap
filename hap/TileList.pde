@@ -27,6 +27,9 @@ public class TileList {
     return chosen;
   }
   
+  void add(Tile t) {
+    TileArrayList.add(t);
+  }
   
   
 }

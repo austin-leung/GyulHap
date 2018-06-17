@@ -42,4 +42,12 @@ public class Tile {
    
  }
  
+ boolean equals(Tile t) {
+   return
+     shape.equals(t.shape) &&
+     shapeColor.equals(t.shapeColor) &&
+     backgroundColor.equals(t.backgroundColor);
+ }
+   
+ 
 }
