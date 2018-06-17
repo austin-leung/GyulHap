@@ -1,2 +1,2 @@
 # LeBrontoGANG
-set game thing
+if u reading this u a cutie
