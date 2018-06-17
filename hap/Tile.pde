@@ -7,12 +7,15 @@ public class Tile {
  
  PImage pattern;
  
+ Boolean selected;
+ 
  Tile( String pShape, String pShapeColor, String pBackgroundColor) {
    
    shape = pShape;
    shapeColor = pShapeColor;
    backgroundColor = pBackgroundColor;
-   pattern = loadImage(pShape + pShapeColor + pBackgroundColor + ".png");
+   pattern = loadImage("tiles/" + pShape + pShapeColor + pBackgroundColor + ".png");
+   selected = false;
    
  }
  
@@ -33,11 +36,10 @@ public class Tile {
  
  void mouseNearby() {
   
-   if (((mouseX - xpos) * (mouseX - xpos) + (mouseY - ypos) * (mouseY - ypos)) < 10000) {
-     print ("werk");
-     print(xpos + " " + ypos);
-     pattern = loadImage("TBB.png");
+   if (((mouseX - (xpos + 100)) * (mouseX - (xpos + 100)) + (mouseY - (ypos + 100)) * (mouseY - (ypos + 100))) < 10000) {
+     selected = true;
    }
+   
  }
  
 }

@@ -1,6 +1,6 @@
 public class TileList {
   
-  String[] shapes = { "C", "T",  };
+  String[] shapes = { "C", "T", "S" };
   String[] shapeColors = { "R", "B", "Y" };
   String[] backgroundColors = { "B", "G", "W" };
   
@@ -8,8 +8,8 @@ public class TileList {
   
   TileList() {
     int i = 0;
-    while (i < 18){
-      for (int j = 0; j < 2; j++){
+    while (i < 27){
+      for (int j = 0; j < 3; j++){
         for (int k = 0; k < 3; k++){
           for (int l = 0; l < 3; l++) {
             TileArrayList.add(new Tile( shapes[j], shapeColors[k], backgroundColors[l]));
