@@ -6,8 +6,8 @@ public class Tile {
  int ypos;
  
  PImage pattern;
- 
- Boolean selected;
+
+ boolean selected;
  
  Tile( String pShape, String pShapeColor, String pBackgroundColor) {
    
@@ -34,11 +34,15 @@ public class Tile {
  }
   
  
- void mouseNearby() {
+ boolean mouseNearby() {
   
    if (((mouseX - (xpos + 100)) * (mouseX - (xpos + 100)) + (mouseY - (ypos + 100)) * (mouseY - (ypos + 100))) < 10000) {
      selected = true;
+     return true;
    }
+   else 
+     return false;
+   
    
  }
  

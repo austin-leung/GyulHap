@@ -55,7 +55,7 @@ void draw() {
     t.display();    }
 {     
   fill (100);
-  rect (745,5,40,30);
+  rect (745,5,60,30);
   if (onoff){
   fill(255);
      textFont(font);
@@ -63,7 +63,7 @@ void draw() {
   onoff=false;
 } else {
   fill (100);
-  rect (745,5,40,30);
+  rect (745,5,60,30);
   onoff=true;
 }
 
@@ -80,11 +80,17 @@ void draw() {
       
 void mouseClicked() {
   for(Tile t : chosenTiles) {
-    t.mouseNearby();
-    if (t.selected == true && !selectedTiles.contains(t)) {
+    if (t.mouseNearby() && !selectedTiles.contains(t)) {
       fill(0,255,0);
       rect(t.xpos-10, t.ypos-10, 220, 220);
       selectedTiles.add(t);
+    }
+    else if (t.mouseNearby() && selectedTiles.contains(t)) {
+      t.selected = false;
+      selectedTiles.remove(t);
+      stroke(148,0,211);
+      fill(148,0,211);
+      rect(t.xpos-10, t.ypos-10, 220, 220);
     }
   }
   println("remaining clicks" + (3 - selectedTiles.size()));
