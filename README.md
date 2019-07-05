@@ -1,10 +1,11 @@
 # Find the Sets! (GyulHap)
 
+![alt text](https://github.com/austin-leung/GyulHap/blob/master/HAP/Image.png?raw=true)
+
 Find the sets by matching trios of boxes where each property is either all the same of all different. For clarification on the rules, read more here: https://puzzles.setgame.com/set/rules_set.htm .
+![alt text] https://github.com/austin-leung/GyulHap/blob/master/HAP/SGH_Set_Explanation.png?raw=true
 
 To try it out, run HAP/hap.pde with processing.
-
-![alt text](https://github.com/austin-leung/GyulHap/blob/master/HAP/Image.png?raw=true)
 
 ## Inspiration
 Find the Sets! is more commonly known as a Set, a card game in which one matches cards with different shapes and patterns. It's an adaptation that was used as a game in the Korean show The Genius. 
