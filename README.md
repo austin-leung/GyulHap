@@ -1,4 +1,4 @@
-# GyulHap
+# Find the Sets! (GyulHap)
 
 Find the sets by matching trios of boxes where each property is either all the same of all different. For clarification on the rules, read more here: https://puzzles.setgame.com/set/rules_set.htm .
 
@@ -7,7 +7,7 @@ To try it out, run HAP/hap.pde with processing.
 ![alt text](https://github.com/austin-leung/GyulHap/blob/master/HAP/Image.png?raw=true)
 
 ## Inspiration
-Gyul! Hap! is more commonly known as a Set, a card game in which one matches cards with different shapes and patterns. It's an adaptation that was used as a game in the Korean show The Genius. 
+Find the Sets! is more commonly known as a Set, a card game in which one matches cards with different shapes and patterns. It's an adaptation that was used as a game in the Korean show The Genius. 
 
 ## What it does
 It provides an interface for playing the game, including a timer and a score counter. You can select and deselect boxes and it can check if the set of three boxes is valid (and replace them if valid).
